@@ -26,7 +26,6 @@ class NewsCubit extends Cubit<NewsStates> {
     BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
     BottomNavigationBarItem(icon: Icon(Icons.sports), label: 'Sports'),
     BottomNavigationBarItem(icon: Icon(Icons.science), label: 'Science'),
-    //BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
   ];
 
   void selectedPage(value) {
@@ -51,8 +50,6 @@ class NewsCubit extends Cubit<NewsStates> {
       businessList.addAll(value?.data['articles']);
 
       print(businessList.length);
-      // businessList = newData?.data['articles'];
-      //print(businessList[0]['title']);
       emit(NewsGetBusinessSuccessState());
     }).catchError((error){
       emit(NewsGetBusinessErrorState(error));
